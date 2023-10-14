@@ -1,0 +1,46 @@
+[tool.poetry]
+name = "fastapi-solution"
+version = "0.1.0"
+description = ""
+authors = ["yandex_practicum"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+redis = "4.6.0"
+pydantic = "2.1.1"
+elasticsearch = { version = "8.9.0", extras = ["async"] }
+fastapi = "0.100.1"
+orjson = "3.9.2"
+uvicorn = "0.23.2"
+fastapi-cache2 = {extras = ["redis"], version = "^0.2.1"}
+gunicorn = "^21.2.0"
+pydantic-settings = "^2.0.2"
+backoff = "^2.2.1"
+pytest = "7.4.0"
+pytest-asyncio = "^0.21.1"
+
+[tool.poetry.group.dev.dependencies]
+black = "23.7.0"
+flake8 = "6.1.0"
+mypy = "1.4.1"
+isort = "5.12.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 120
+target-version = ['py310']
+
+[tool.isort]
+multi_line_output = 3
+include_trailing_comma = true
+force_grid_wrap = 0
+use_parentheses = true
+line_length = 120
+
+[tool.pytest.ini_options]
+asyncio_mode="auto"
